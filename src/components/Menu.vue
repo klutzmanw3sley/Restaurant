@@ -6,6 +6,7 @@ const menu = {
         images:"public/images/menu/samosa.jpg",
         price:1750,
         description:'Chicken samosa',
+        longDescripption:'',
         category:'food'
 
     },
@@ -100,7 +101,7 @@ const menu = {
         <v-row>
             <v-col md="3" v-for="item in menu" :key = "item">
                 <v-card color="indigo-darken-4">
-                    <v-img :src="item.images" height="300 cover"></v-img>
+                    <v-img :src="item.images" height="300" cover></v-img>
                     <v-row>
                         <v-col md="6">
                             <v-card-title>{{item.name}}</v-card-title>
