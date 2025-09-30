@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from 'vue'
 import {useRouter} from "vue-router"
+const router =useRouter();
 
 const showPassword = ref(false)
 
@@ -12,7 +13,7 @@ const password = ref(null)
 function login(){
     try {
         //get user data
-        let user = JSON.parse(localStorage.getItem( "signUpData"));
+        let user = JSON.parse(localStorage.getItem( "SignUpData"));
         //check user details
         if(email.value = user.email && password.value == user.password){
             localStorage.setItem( "isLoggedIn", true );
@@ -54,7 +55,7 @@ function login(){
                         <router-link to="/signup"> Sign Up</router-link>
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn color="white" variant="elevated" @click="Login()">Login</v-btn>
+                        <v-btn color="white" variant="elevated" @click="login()">Login</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>

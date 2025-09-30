@@ -1,5 +1,7 @@
 <script setup> 
 import {ref} from 'vue'
+import {useRouter} from "vue-router"
+const router =useRouter();
 
 const showPassword =ref(false)
 const showConfirmPassword = ref(false)
@@ -23,6 +25,7 @@ const signUpData = {
  try{
     // save data on browser
     localStorage.setItem("SignUpData",JSON.stringify(signUpData));
+    router.push('/')
     // to Do: send data to backend
 
 } catch (err) {
